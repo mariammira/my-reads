@@ -17,7 +17,7 @@ export const get = (bookId) =>
 export const getAll = () =>
   fetch(`${api}/books`, { headers })
     .then((res) => res.json())
-    .then((data) => data.books);
+    .then((data) => data.books)//.then((data)=>console.log(data));
 
 export const update = (book, shelf) =>
   fetch(`${api}/books/${book.id}`, {
