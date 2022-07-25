@@ -15,7 +15,12 @@ function Comp1(props) {
   }
   useEffect(() => {
     const getBooks = async () => {
-      const res = props.showSearchPage&&search?await BooksAPI.search(search,5): await BooksAPI.getAll();
+      var res 
+      if(props.showSearchPage){
+        if(search)res=await BooksAPI.search(search,5)
+        else setSearchBooks([])
+      }
+      else res=await BooksAPI.getAll();
       if(res ){
         if(props.showSearchPage){
           
