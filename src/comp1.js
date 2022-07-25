@@ -18,7 +18,7 @@ function Comp1(props) {
       const res = props.showSearchPage&&search?await BooksAPI.search(search,5): await BooksAPI.getAll();
       if(res ){
         if(props.showSearchPage){
-          debugger
+          
           setSearchBooks(res.error?[]:res)
         }
         else{
