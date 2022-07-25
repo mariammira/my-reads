@@ -56,7 +56,7 @@ function Comp1(props) {
           </div>
           <div className="search-books-results">
             <ol className="books-grid">
-            {searchBooks?searchBooks.map((book)=>(<li><BookInfo key={book.id} onUpdateShelf={changeShelf}  info={book}/> </li>)):(<li></li>)}
+            {searchBooks?searchBooks.map((book)=>(<li key={book.id}><BookInfo  onUpdateShelf={changeShelf}  info={book}/> </li>)):(<li></li>)}
             </ol>
           </div>
         </div>
@@ -75,8 +75,8 @@ function Comp1(props) {
           <h2 className="bookshelf-title">{key}</h2>
           <div className="bookshelf-books">
             <ol className="books-grid">
-            {groupedBooks[key].map((book)=>(<li>
-                <BookInfo key={book.id} onUpdateShelf={changeShelf} info={ book }/>
+            {groupedBooks[key].map((book)=>(<li key={book.id}>
+                <BookInfo  onUpdateShelf={changeShelf} info={ book }/>
               </li>))}
              
             </ol>
